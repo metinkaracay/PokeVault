@@ -1,4 +1,4 @@
-package com.example.pokevault.ui.theme
+package com.example.pokevault.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

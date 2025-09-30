@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -56,4 +58,24 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    // Coil
+    implementation(libs.coil3)
+    implementation(libs.coil3.okhttp)
+
+    // Chucker
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chucker.no.op)
+
+    // Hilt
+    implementation(libs.androidx.hilt.navigation)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }

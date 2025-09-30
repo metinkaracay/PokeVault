@@ -1,4 +1,4 @@
-package com.example.pokevault.ui.theme
+package com.example.pokevault.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

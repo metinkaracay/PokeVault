@@ -1,4 +1,4 @@
-package com.example.pokevault.ui.theme
+package com.example.pokevault.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

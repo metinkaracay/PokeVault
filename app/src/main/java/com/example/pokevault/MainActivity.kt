@@ -4,14 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.pokevault.ui.theme.PokeVaultTheme
+import androidx.navigation.compose.rememberNavController
+import com.example.pokevault.presentation.navigation.NavGraph
+import com.example.pokevault.presentation.ui.theme.PokeVaultTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +18,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PokeVaultTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                val navController = rememberNavController()
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .navigationBarsPadding()
+                ) {
+                    NavGraph(
+                        navController = navController
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PokeVaultTheme {
-        Greeting("Android")
     }
 }
