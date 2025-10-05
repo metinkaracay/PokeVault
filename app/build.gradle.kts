@@ -74,8 +74,18 @@ dependencies {
     implementation(libs.androidx.hilt.navigation)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    // Network
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
 }
 
 kapt {
     correctErrorTypes = true
+}
+
+hilt {
+    enableAggregatingTask = false
 }
