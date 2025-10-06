@@ -31,7 +31,6 @@ fun PokemonListDto.toDomain(): PokemonList {
 }
 
 fun PokemonListItemDto.toDomain(): Pokemon {
-    // URL'den ID'yi çıkar: "https://pokeapi.co/api/v2/pokemon/1/" -> 1
     val id = url.split("/").dropLast(1).lastOrNull()?.toIntOrNull() ?: 0
     
     return Pokemon(
