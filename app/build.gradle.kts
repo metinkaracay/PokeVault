@@ -74,8 +74,26 @@ dependencies {
     implementation(libs.androidx.hilt.navigation)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    // Network
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Room
+    implementation(libs.room)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
+
+    // DataStore
+    implementation(libs.datastore.preferences)
 }
 
 kapt {
     correctErrorTypes = true
+}
+
+hilt {
+    enableAggregatingTask = false
 }
