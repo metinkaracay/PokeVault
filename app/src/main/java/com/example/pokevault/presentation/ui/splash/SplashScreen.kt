@@ -11,7 +11,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun SplashScreen(
-    onNavigateToLogin: () -> Unit,
+    onNavigateToMain: () -> Unit,
     viewModel: SplashViewModel = hiltViewModel()
 ) {
     Box(
@@ -19,7 +19,7 @@ fun SplashScreen(
     ) {
         Button(
             modifier = Modifier.align(Alignment.Center),
-            onClick = { onNavigateToLogin() }
+            onClick = { onNavigateToMain() }
         ) {
             Text(
                 text = "Go to Explore"
